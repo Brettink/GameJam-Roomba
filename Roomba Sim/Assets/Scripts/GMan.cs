@@ -52,7 +52,9 @@ public class GMan : MonoBehaviour
         guageBar.color = (hardRefill) ? hardFill : normalFill;
     }
 
+    
     void UpdateBatInd() {
+        return;
         foreach (GameObject obj in bats) {
             obj.SetActive(false);
         }
@@ -60,6 +62,7 @@ public class GMan : MonoBehaviour
             bats[i].SetActive(true);
         }
     }
+    
 
     public void NoBoost() {
         isFilling = true;
