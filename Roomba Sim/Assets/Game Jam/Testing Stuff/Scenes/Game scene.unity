@@ -2749,7 +2749,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330543565}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1330543568
 Camera:
   m_ObjectHideFlags: 0
@@ -3512,9 +3512,6 @@ PrefabInstance:
       propertyPath: batLvlScript
       value: 
       objectReference: {fileID: 1721090118}
-      propertyPath: m_lPotentialDirtyAreas.Array.data[0]
-      value: 
-      objectReference: {fileID: 544288114}
     - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
       propertyPath: m_lPotentialDirtyAreas.Array.data[1]
