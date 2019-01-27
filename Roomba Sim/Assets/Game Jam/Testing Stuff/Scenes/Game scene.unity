@@ -1581,7 +1581,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &605947801
 PrefabInstance:
@@ -1967,7 +1967,7 @@ Transform:
   - {fileID: 221891674}
   - {fileID: 1746708299}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &887849982 stripped
 GameObject:
@@ -2652,8 +2652,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 2, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1310088925}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1330543568
 Camera:
@@ -3349,7 +3349,7 @@ PrefabInstance:
         type: 3}
       propertyPath: batLvlMaster
       value: 
-      objectReference: {fileID: 2049111878}
+      objectReference: {fileID: 0}
     - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
       propertyPath: outliner
@@ -3369,7 +3369,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_lPotentialDirtyAreas.Array.data[0]
       value: 
-      objectReference: {fileID: 544288114}
+      objectReference: {fileID: 1746708300}
     - target: {fileID: 4107888502213368794, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
       propertyPath: m_Volume
