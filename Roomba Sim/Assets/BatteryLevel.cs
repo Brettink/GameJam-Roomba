@@ -27,7 +27,6 @@ public class BatteryLevel : MonoBehaviour
         }
         m_fCurrentLevel = fMaxLevel;
         m_bLowRange = false;
-        Debug.Log("Found " + iCount.ToString() + " battery lights.");
     }
 
     // Update is called once per frame
@@ -57,7 +56,6 @@ public class BatteryLevel : MonoBehaviour
                 m_amBatteryLights[iStep].material.color = Color.black;
             }
         }
-        if (Input.GetKey(KeyCode.P)) AddChargeLevelRelative(0.1f);
     }
 
     public void SetChargeLevelAbsolute(float fChargePercent)

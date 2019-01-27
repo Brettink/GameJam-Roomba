@@ -15,17 +15,11 @@ public class GMan : MonoBehaviour
     //Dictionary<GameObject, float>
     public GameObject CleanObjPrefab;
     float timeToFin = 0f;
-    float batLvlVal = 6f;
-    float batLvl {
-        get { return batLvlVal; }
-        set {
-            batLvlVal = value;
-            UpdateBatInd();
-        }
-    }
+
     public GameObject UI;
-    public Transform batLvlMaster;
-    GameObject[] bats;
+
+    
+
     private Text points, time, numL;
     public Image guageBar;
     public static GMan self;
@@ -53,15 +47,7 @@ public class GMan : MonoBehaviour
     }
 
     
-    void UpdateBatInd() {
-        return;
-        foreach (GameObject obj in bats) {
-            obj.SetActive(false);
-        }
-        for (int i = 0; i < batLvl; i++) {
-            bats[i].SetActive(true);
-        }
-    }
+
     
 
     public void NoBoost() {
@@ -88,10 +74,7 @@ public class GMan : MonoBehaviour
         numL = UI.transform.GetChild(2).GetComponent<Text>();
         numL.text = "# Left: " + numToClean;
         normalFill = guageBar.color;
-        bats = new GameObject[batLvlMaster.childCount];
-        for (int i = 0; i < batLvlMaster.childCount; i++) {
-            bats[i] = batLvlMaster.GetChild(i).gameObject;
-        }
+
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
         for (int i = 0; i < numToClean; i++) {
             float x = UnityEngine.Random.Range(roomBounds.min.x, roomBounds.max.x);
@@ -110,10 +93,7 @@ public class GMan : MonoBehaviour
                 boostPerc = 1f;
             }
         }
-        batLvl -= .01f;
-        if (batLvl <= 0f) {
-            batLvl = 0f;
-        }
+
         time.text = "Time: " + (int)(timeToFin - Time.fixedTime);
         float numOBjs = GameObject.FindGameObjectsWithTag("ObjC").Length;
         float perC = 100f - ((numOBjs / numToClean) * 100f);
