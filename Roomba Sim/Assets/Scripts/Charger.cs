@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Charger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+   void OnTriggerStay(Collider col) {
+        if (col.gameObject.tag == "Player") {
+            Debug.Log("Charge");
+            GMan.self.batLvlScript.AddChargeLevelRelative(0.5f);
+        }
     }
 }

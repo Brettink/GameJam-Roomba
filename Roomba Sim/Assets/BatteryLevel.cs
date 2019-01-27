@@ -56,6 +56,9 @@ public class BatteryLevel : MonoBehaviour
                 m_amBatteryLights[iStep].material.color = Color.black;
             }
         }
+        if (m_fCurrentLevel <= 0f) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(5);
+        }
     }
 
     public void SetChargeLevelAbsolute(float fChargePercent)
@@ -69,5 +72,8 @@ public class BatteryLevel : MonoBehaviour
     {
         m_fCurrentLevel += (fMaxLevel * fChargePerSecond * Time.deltaTime);
         m_bLowRange = m_fCurrentLevel < (0.4f * fMaxLevel);
+        if (m_fCurrentLevel >= fMaxLevel) {
+            m_fCurrentLevel = fMaxLevel;
+        }
     }
 }

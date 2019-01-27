@@ -43,6 +43,13 @@ public class controller : MonoBehaviour
         }
     }
 
+    public void OnTriggerStay(Collider col) {
+        if (col.name == "Charger") {
+            Debug.Log("Charge");
+            GMan.self.batLvlScript.AddChargeLevelRelative(0.75f);
+        }
+    }
+
     IEnumerator Wait(GameObject toDestroy) {
         yield return new WaitForSeconds(0.1f);
         Object.Destroy(toDestroy);

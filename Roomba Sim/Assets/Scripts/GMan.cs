@@ -14,6 +14,7 @@ public class GMan : MonoBehaviour
     public GameObject rotator;
     //Dictionary<GameObject, float>
     public GameObject CleanObjPrefab;
+    public BatteryLevel batLvlScript;
     float timeToFin = 0f;
 
     public GameObject UI;
@@ -23,7 +24,7 @@ public class GMan : MonoBehaviour
     private Text points, time, numL;
     public Image guageBar;
     public static GMan self;
-    float boostPercVal = 1f;
+    public float boostPercVal = 1f;
     bool isFilling = false;
     public static bool hardRefill = false;
     Color normalFill, hardFill = Color.red;
@@ -74,7 +75,6 @@ public class GMan : MonoBehaviour
         numL = UI.transform.GetChild(2).GetComponent<Text>();
         numL.text = "# Left: " + numToClean;
         normalFill = guageBar.color;
-
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
         for (int i = 0; i < numToClean; i++) {
             float x = UnityEngine.Random.Range(roomBounds.min.x, roomBounds.max.x);
@@ -98,6 +98,12 @@ public class GMan : MonoBehaviour
         float numOBjs = GameObject.FindGameObjectsWithTag("ObjC").Length;
         float perC = 100f - ((numOBjs / numToClean) * 100f);
         numL.text = "Cleanliness: " + Math.Round(perC, 2) + "%";
+        if (perC >= 100f) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(6);
+        }
+        if ((timeToFin - Time.fixedTime <= 0f)) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(5);
+        }
         Vector3 r = rotator.transform.localRotation.eulerAngles;
         r.y+=10f;
         rotator.transform.localRotation = Quaternion.Euler(r);
