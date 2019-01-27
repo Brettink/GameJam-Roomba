@@ -23,7 +23,22 @@ ModelImporter:
     4300000: Table_Leg_L_Geo
     4300002: Table_Leg_R_Geo
     4300004: Table_wLegs_Geo
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table_Leg_L_GeoMat
+    second: {fileID: 2100000, guid: 9252a366753d62a43825a25f1eea6e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table_Leg_R_GeoMat
+    second: {fileID: 2100000, guid: 9252a366753d62a43825a25f1eea6e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table_wLegs_GeoMat
+    second: {fileID: 2100000, guid: c37bd027156bb0844910d9d573e60ff7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

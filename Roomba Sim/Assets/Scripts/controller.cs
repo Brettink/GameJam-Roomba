@@ -5,7 +5,7 @@ using UnityEngine;
 public class controller : MonoBehaviour
 {
     public AudioSource Clip;
-    public AudioClip Startup, Loop, Winddown, RobbitJump;
+    public AudioClip Startup, Loop, Winddown, RobbitJump, Bump;
     float rot = 0f;
     public float jumpRate = 10f, speed = 1f, 
         boostSpeed = 75f, turnSpeed = 1.5f, 
@@ -23,6 +23,9 @@ public class controller : MonoBehaviour
     public void OnCollisionEnter(Collision col) {
         if (col.gameObject.tag == "Floor") {
             canJump = true;
+        }
+        if (col.gameObject.tag != "Floor") {
+            SwitchClip(Bump, .7f);
         }
     }
     public void OnCollisionStay(Collision col) {
@@ -75,7 +78,12 @@ public class controller : MonoBehaviour
     }
 
     public void SwitchClip(AudioClip clip) {
+        SwitchClip(clip, Clip.volume);
+    }
+
+    public void SwitchClip(AudioClip clip, float volAdjust) {
         Clip.Stop();
+        Clip.volume = volAdjust;
         Clip.clip = clip;
         Clip.Play();
     }
