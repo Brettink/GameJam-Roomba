@@ -2624,6 +2624,8 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 220a7588e0ebb504ab56d6bb611e33a9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0684c939130fe974984809d9ed738bb7, type: 3}
+<<<<<<< HEAD
+=======
 --- !u!1 &1330543565
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,6 +2699,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+>>>>>>> 68b7824ed7fb2a1f53a34f0a5c765b6023206ac0
 --- !u!1 &1342421111 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: d7b1a058abdebc645bcf4a0b9b249bfe,
@@ -3345,6 +3348,8 @@ PrefabInstance:
       propertyPath: guageBar
       value: 
       objectReference: {fileID: 134154725}
+<<<<<<< HEAD
+=======
     - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
       propertyPath: batLvlMaster
@@ -3380,6 +3385,7 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 1.0658388
       objectReference: {fileID: 0}
+>>>>>>> 68b7824ed7fb2a1f53a34f0a5c765b6023206ac0
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 728cee02a2b98da49969ec5d0a670d16, type: 3}
 --- !u!1 &1773250883 stripped
