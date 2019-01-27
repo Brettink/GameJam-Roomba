@@ -2720,7 +2720,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1330543566}
   - component: {fileID: 1330543568}
-  - component: {fileID: 1330543567}
   m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
@@ -2742,14 +2741,6 @@ Transform:
   m_Father: {fileID: 1310088925}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1330543567
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330543565}
-  m_Enabled: 0
 --- !u!20 &1330543568
 Camera:
   m_ObjectHideFlags: 0
@@ -3517,6 +3508,11 @@ PrefabInstance:
       propertyPath: m_lPotentialDirtyAreas.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
+        type: 3}
+      propertyPath: m_lPotentialDirtyAreas.Array.data[0]
+      value: 
+      objectReference: {fileID: 544288114}
     - target: {fileID: 4107888502213368794, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
       propertyPath: m_Volume
