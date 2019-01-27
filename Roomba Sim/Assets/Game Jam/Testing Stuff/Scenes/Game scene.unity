@@ -1516,8 +1516,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.2, y: 1, z: 9.2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 9.2, y: 1, z: 9.136229}
+  m_Center: {x: 0, y: 2, z: 0.031885386}
 --- !u!1 &552669472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3479,6 +3479,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
+      propertyPath: m_lPotentialDirtyAreas.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
+        type: 3}
       propertyPath: rotator
       value: 
       objectReference: {fileID: 1258649181}
@@ -3504,13 +3509,29 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2a2ed52c437c71441a519e51002f6585, type: 2}
     - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
+<<<<<<< HEAD
       propertyPath: batLvlScript
       value: 
       objectReference: {fileID: 1721090118}
+=======
+      propertyPath: m_lPotentialDirtyAreas.Array.data[0]
+      value: 
+      objectReference: {fileID: 544288114}
+    - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
+        type: 3}
+      propertyPath: m_lPotentialDirtyAreas.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+>>>>>>> 5d8083d414a46f58c5bfd454d2ca9175f1d3e89f
     - target: {fileID: 4107888502213368794, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
       propertyPath: m_Volume
       value: 0.325
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107888502213368794, guid: 728cee02a2b98da49969ec5d0a670d16,
+        type: 3}
+      propertyPath: MinDistance
+      value: 1.0658388
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 728cee02a2b98da49969ec5d0a670d16, type: 3}
