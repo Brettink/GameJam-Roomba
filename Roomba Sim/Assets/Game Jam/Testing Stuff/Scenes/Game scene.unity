@@ -3509,11 +3509,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2a2ed52c437c71441a519e51002f6585, type: 2}
     - target: {fileID: 4107888502213368792, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
-<<<<<<< HEAD
       propertyPath: batLvlScript
       value: 
       objectReference: {fileID: 1721090118}
-=======
       propertyPath: m_lPotentialDirtyAreas.Array.data[0]
       value: 
       objectReference: {fileID: 544288114}
@@ -3522,7 +3520,6 @@ PrefabInstance:
       propertyPath: m_lPotentialDirtyAreas.Array.data[1]
       value: 
       objectReference: {fileID: 0}
->>>>>>> 5d8083d414a46f58c5bfd454d2ca9175f1d3e89f
     - target: {fileID: 4107888502213368794, guid: 728cee02a2b98da49969ec5d0a670d16,
         type: 3}
       propertyPath: m_Volume

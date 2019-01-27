@@ -161,10 +161,7 @@ public class GMan : MonoBehaviour
         numL = UI.transform.GetChild(2).GetComponent<Text>();
         numL.text = "# Left: " + numToClean;
         normalFill = guageBar.color;
-<<<<<<< HEAD
-=======
         FillMessyArea(BuildMessyArea());
->>>>>>> 5d8083d414a46f58c5bfd454d2ca9175f1d3e89f
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
