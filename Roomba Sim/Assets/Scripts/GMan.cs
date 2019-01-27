@@ -7,9 +7,95 @@ using System.Linq;
 
 public class GMan : MonoBehaviour
 {
+    private class MessArea
+    {
+        public MessArea()
+        {
+            m_lsecSections = new List<MessSection>();
+            m_fTotalArea = 0;
+        }
+        private List<MessSection> m_lsecSections;
+        private float m_fTotalArea;
+        private class MessSection
+        {
+            public float m_fArea;
+            public float m_fWeight;
+
+            private float m_fXMin, m_fXMax, m_fZMin, m_fZMax;
+            public MessSection(float fXMin, float fXMax, float fZMin, float fZMax)
+            {
+                m_fXMin = fXMin;
+                m_fXMax = fXMax;
+                m_fZMin = fZMin;
+                m_fZMax = fZMax;
+
+                m_fArea = (m_fXMax - m_fXMin) * (m_fZMax - m_fZMin);
+            }
+            public Vector3 GetPointInBounds()
+            {
+                Vector3 vResult = new Vector3();
+                vResult.x = UnityEngine.Random.Range(m_fXMin, m_fXMax);
+                vResult.z = UnityEngine.Random.Range(m_fZMin, m_fZMax);
+                return vResult;
+            }
+            public void SetWeight(float fTotalArea)
+            {
+                m_fWeight = m_fArea / fTotalArea;
+            }
+
+        }
+
+        public void AddSection(float fXMin, float fXMax, float fZMin, float fZMax)
+        {
+            MessSection nuSection = new MessSection(fXMin, fXMax, fZMin, fZMax);
+            m_lsecSections.Add(nuSection);
+            m_fTotalArea += nuSection.m_fArea;
+        }
+        public void AddSection(Bounds oBoundary)
+        {
+            AddSection(
+                oBoundary.center.x - oBoundary.extents.x,
+                oBoundary.center.x + oBoundary.extents.x,
+                oBoundary.center.z - oBoundary.extents.z,
+                oBoundary.center.z + oBoundary.extents.z
+            );
+
+        }
+        public void LockWeights()
+        {
+            foreach (MessSection oSection in m_lsecSections)
+            {
+                oSection.SetWeight(m_fTotalArea);
+            }
+        }
+
+        private MessSection GetSectionFromWeight(float fRandom)
+        {
+            float fWeightSoFar = 0;
+            foreach (MessSection oSection in m_lsecSections)
+            {
+                if (fRandom<=(fWeightSoFar+oSection.m_fWeight))
+                {
+                    return oSection;
+                }
+                fWeightSoFar += oSection.m_fWeight;
+            }
+            return m_lsecSections[m_lsecSections.Count - 1];
+        }
+
+        public Vector3 GetPoint()
+        {
+            float fRand = UnityEngine.Random.Range(0.0f, 1.0f);
+            return GetSectionFromWeight(fRand).GetPointInBounds();
+        }
+    }
+
+
     public Material outliner;
     public static int difficulty = 1;
     public static int numToClean = (int)(difficulty * Math.Abs(Math.Cos(difficulty) * 20) * 15);
+
+    public List<BoxCollider> m_lPotentialDirtyAreas;
     Bounds roomBounds;
     public GameObject rotator;
     //Dictionary<GameObject, float>
@@ -74,16 +160,33 @@ public class GMan : MonoBehaviour
         numL = UI.transform.GetChild(2).GetComponent<Text>();
         numL.text = "# Left: " + numToClean;
         normalFill = guageBar.color;
-
+        FillMessyArea(BuildMessyArea());
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
-        for (int i = 0; i < numToClean; i++) {
-            float x = UnityEngine.Random.Range(roomBounds.min.x, roomBounds.max.x);
-            float z = UnityEngine.Random.Range(roomBounds.min.z, roomBounds.max.z);
+    }
 
-            Vector3 pos = new Vector3(x, 5f, z);
+    private MessArea BuildMessyArea()
+    {
+        MessArea oResult = new MessArea();
+        foreach (BoxCollider collide in m_lPotentialDirtyAreas)
+        {
+            collide.isTrigger = true; // just making sure.
+            oResult.AddSection(collide.bounds);
+        }
+        oResult.LockWeights();
+        return oResult;
+    }
+
+    private void FillMessyArea(MessArea oArea)
+    {
+        for (int i = 0; i < numToClean; i++)
+        {
+
+            Vector3 pos = oArea.GetPoint();
+            pos.y = 5f;
             GameObject obj = Instantiate(CleanObjPrefab);
             obj.transform.position = pos;
         }
+
     }
 
     void LateUpdate() {
