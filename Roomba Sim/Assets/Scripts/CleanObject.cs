@@ -15,11 +15,11 @@ public class CleanObject : MonoBehaviour
     private AudioClip clip;
     void Start()
     {
-        Debug.Log(Enum.GetValues(Type.Cup.GetType()).Length);
+        //Debug.Log(Enum.GetValues(Type.Cup.GetType()).Length);
         type = (Type)UnityEngine.Random.Range(0, Enum.GetValues(Type.Cup.GetType()).Length);
         GameObject obj = Instantiate(
             Resources.Load<GameObject>("CleanObjs/" + type.ToString()), transform);
-        Debug.Log((int)type);
+//        Debug.Log((int)type);
         MeshRenderer meshR = obj.transform.GetChild(0).GetComponent<MeshRenderer>();
         Material[] mats = new Material[2];
         mats[0] = meshR.materials[0];
