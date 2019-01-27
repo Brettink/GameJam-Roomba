@@ -91,7 +91,7 @@ public class GMan : MonoBehaviour
     }
 
 
-    public Material outliner;
+    public Material outliner, outliner2;
     public static int difficulty = 1;
     public static int numToClean = (int)(difficulty * Math.Abs(Math.Cos(difficulty) * 20) * 15);
 
@@ -155,7 +155,7 @@ public class GMan : MonoBehaviour
     {
         roomBounds = GetComponent<BoxCollider>().bounds;
         self = this;
-        timeToFin = Time.fixedTime + 60f * difficulty;
+        timeToFin = Time.fixedTime + 300f;
         points = UI.transform.GetChild(0).GetComponent<Text>();
         time = UI.transform.GetChild(1).GetComponent<Text>();
         numL = UI.transform.GetChild(2).GetComponent<Text>();
@@ -203,10 +203,10 @@ public class GMan : MonoBehaviour
         float perC = 100f - ((numOBjs / numToClean) * 100f);
         numL.text = "Cleanliness: " + Math.Round(perC, 2) + "%";
         if (perC >= 100f) {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(6);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(8);
         }
         if ((timeToFin - Time.fixedTime <= 0f)) {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(5);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(7);
         }
         Vector3 r = rotator.transform.localRotation.eulerAngles;
         r.y+=10f;

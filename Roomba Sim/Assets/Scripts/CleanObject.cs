@@ -8,7 +8,7 @@ public class CleanObject : MonoBehaviour
 {
     // Start is called before the first frame update
     private enum Type {
-        Loon, Toon, Nick, Penn, Quart, Dime, Cup, Chip, Paper
+        Loon, Toon, Nick, Penn, Quart, Dime, Cup, Chip, Paper, Puddle
     }
     private Type type;
     public AudioSource aud;

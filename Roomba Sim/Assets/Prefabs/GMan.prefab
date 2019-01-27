@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4107888502213368793}
   - component: {fileID: 4107888502213368792}
   - component: {fileID: 4107888502213368794}
+  - component: {fileID: 544288114}
   m_Layer: 0
   m_Name: GMan
   m_TagString: Untagged
@@ -44,12 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee54ecf2a7f7c3429804a719169d9c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outliner: {fileID: 2100000, guid: 2a2ed52c437c71441a519e51002f6585, type: 2}
+  outliner2: {fileID: 2100000, guid: 1ff52e56fe88f074ea1994c50c99b360, type: 2}
+  m_lPotentialDirtyAreas:
+  - {fileID: 0}
   rotator: {fileID: 0}
   CleanObjPrefab: {fileID: 3778683402487165265, guid: e9d700b7ae7761c4eb45af3295ada1f4,
     type: 3}
+  batLvlScript: {fileID: 0}
   UI: {fileID: 0}
-  batLvlMaster: {fileID: 0}
   guageBar: {fileID: 0}
+  boostPercVal: 1
 --- !u!82 &4107888502213368794
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63,7 +69,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 74b22c6557f94894e8bc384daed01d6f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.598
+  m_Volume: 0.325
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -71,7 +77,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0658388
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -147,3 +153,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &544288114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107888502213368791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.2, y: 1, z: 9.136229}
+  m_Center: {x: 0, y: 2, z: 0.031885386}

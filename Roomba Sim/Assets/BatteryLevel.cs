@@ -57,7 +57,7 @@ public class BatteryLevel : MonoBehaviour
             }
         }
         if (m_fCurrentLevel <= 0f) {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(5);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(7);
         }
     }
 

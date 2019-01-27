@@ -12,6 +12,7 @@ public class controller : MonoBehaviour
         normalMax = 8f, boostMax = 20f;
     float timeToFill = 0f;
     bool canJump = true;
+    public MeshRenderer rend;
     Rigidbody body;
     // Start is called before the first frame update
     void Start()
@@ -41,12 +42,25 @@ public class controller : MonoBehaviour
             col.transform.parent.gameObject.GetComponent<CleanObject>().aud.Play();
             StartCoroutine(Wait(col.transform.parent.gameObject));
         }
+        if (col.name == "Charger") {
+            Material[] mats = rend.materials;
+            mats[1] = GMan.self.outliner2;
+            rend.materials = mats;
+        }
+    }
+
+    public void OnTriggerExit(Collider col) {
+        if (col.name == "Charger") {
+            Material[] mats = rend.materials;
+            mats[1] = null;
+            rend.materials = mats;
+        }
     }
 
     public void OnTriggerStay(Collider col) {
         if (col.name == "Charger") {
             Debug.Log("Charge");
-            GMan.self.batLvlScript.AddChargeLevelRelative(0.75f);
+            GMan.self.batLvlScript.AddChargeLevelRelative(0.25f);
         }
     }
 

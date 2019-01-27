@@ -21,8 +21,14 @@ EditorBuildSettings:
     path: Assets/Game Jam/Testing Stuff/Scenes/Options.unity
     guid: 114385f7530641f49a87a0e6fa3b7350
   - enabled: 1
+    path: Assets/Game Jam/Testing Stuff/Scenes/Level Select.unity
+    guid: 1973b3c2d2dfe054f8780093161c1a74
+  - enabled: 1
     path: Assets/Game Jam/Testing Stuff/Scenes/Game scene.unity
     guid: 65c675de63c46614eafec967ee6d7fd7
+  - enabled: 1
+    path: Assets/Game Jam/Testing Stuff/Scenes/The Room 2.unity
+    guid: 1b0f5d33159b1c243aefe497ff1034f6
   - enabled: 1
     path: Assets/Game Jam/Testing Stuff/Scenes/You Lose.unity
     guid: 5f06aba73aa0bed43a3dfafee8e8e14c
