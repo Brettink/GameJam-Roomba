@@ -7,14 +7,15 @@ using System.Linq;
 
 public class GMan : MonoBehaviour
 {
+    public Material outliner;
     public static int difficulty = 1;
-    public static int numToClean = (int)(difficulty * Math.Abs(Math.Cos(difficulty) * 20) * 50);
-    Bounds roomBounds = new Bounds(Vector3.zero, (Vector3.one - Vector3.up) * 30);
+    public static int numToClean = (int)(difficulty * Math.Abs(Math.Cos(difficulty) * 20) * 15);
+    Bounds roomBounds;
     public GameObject rotator;
     //Dictionary<GameObject, float>
     public GameObject CleanObjPrefab;
     float timeToFin = 0f;
-    float batLvlVal = 4f;
+    float batLvlVal = 6f;
     float batLvl {
         get { return batLvlVal; }
         set {
@@ -76,6 +77,7 @@ public class GMan : MonoBehaviour
 
     void Start()
     {
+        roomBounds = GetComponent<BoxCollider>().bounds;
         self = this;
         timeToFin = Time.fixedTime + 60f * difficulty;
         points = UI.transform.GetChild(0).GetComponent<Text>();
@@ -92,7 +94,7 @@ public class GMan : MonoBehaviour
             float x = UnityEngine.Random.Range(roomBounds.min.x, roomBounds.max.x);
             float z = UnityEngine.Random.Range(roomBounds.min.z, roomBounds.max.z);
 
-            Vector3 pos = new Vector3(x, 1f, z);
+            Vector3 pos = new Vector3(x, 5f, z);
             GameObject obj = Instantiate(CleanObjPrefab);
             obj.transform.position = pos;
         }
@@ -110,6 +112,9 @@ public class GMan : MonoBehaviour
             batLvl = 0f;
         }
         time.text = "Time: " + (int)(timeToFin - Time.fixedTime);
+        float numOBjs = GameObject.FindGameObjectsWithTag("ObjC").Length;
+        float perC = 100f - ((numOBjs / numToClean) * 100f);
+        numL.text = "Cleanliness: " + Math.Round(perC, 2) + "%";
         Vector3 r = rotator.transform.localRotation.eulerAngles;
         r.y+=10f;
         rotator.transform.localRotation = Quaternion.Euler(r);

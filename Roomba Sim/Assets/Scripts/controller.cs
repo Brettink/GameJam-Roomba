@@ -5,7 +5,7 @@ using UnityEngine;
 public class controller : MonoBehaviour
 {
     public AudioSource Clip;
-    public AudioClip Startup, Loop, Winddown;
+    public AudioClip Startup, Loop, Winddown, RobbitJump;
     float rot = 0f;
     public float jumpRate = 10f, speed = 1f, 
         boostSpeed = 75f, turnSpeed = 1.5f, 
@@ -68,7 +68,6 @@ public class controller : MonoBehaviour
             Vector3 myRot = transform.rotation.eulerAngles;
             myRot.x = Mathf.Lerp(myRot.x, 0f, myRot.x / 3f);
             myRot.z = Mathf.Lerp(myRot.z, 0f, myRot.z / 3f);
-            Debug.Log("I can't jump " + Time.time);
             transform.rotation = Quaternion.Euler(myRot);
         }
         if (Input.GetKey(KeyCode.A)) { rot = -turnSpeed; } 
@@ -102,6 +101,11 @@ public class controller : MonoBehaviour
         } else {
             if (Time.time >= timeToFill) {
                 GMan.self.SendMessage("NoBoost");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (canJump) {
+                SwitchClip(RobbitJump);
             }
         }
         if (Input.GetKey(KeyCode.Space)) {

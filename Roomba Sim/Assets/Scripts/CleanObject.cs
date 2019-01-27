@@ -20,6 +20,11 @@ public class CleanObject : MonoBehaviour
         GameObject obj = Instantiate(
             Resources.Load<GameObject>("CleanObjs/" + type.ToString()), transform);
         Debug.Log((int)type);
+        MeshRenderer meshR = obj.transform.GetChild(0).GetComponent<MeshRenderer>();
+        Material[] mats = new Material[2];
+        mats[0] = meshR.materials[0];
+        mats[1] = GMan.self.outliner;
+        meshR.materials = mats;
         if ((int)type < 6) {
             clip = Resources.Load<AudioClip>("Audio/Sound/CoinClink");
             aud.clip = clip;

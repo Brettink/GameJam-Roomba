@@ -5,7 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Game Jam/Testing Stuff/Scenes/Menu.unity
+    guid: 658a0277323b27641a991dc54ea63d2c
+  - enabled: 1
+    path: Assets/Game Jam/Testing Stuff/Scenes/Instructions.unity
+    guid: ca47b00d8e5321948b2febd1f5c3a440
+  - enabled: 1
+    path: Assets/Game Jam/Testing Stuff/Scenes/Credits.unity
+    guid: 9c399824b402e8b49b05af56ff5548d8
+  - enabled: 1
+    path: Assets/Game Jam/Testing Stuff/Scenes/Options.unity
+    guid: 114385f7530641f49a87a0e6fa3b7350
+  - enabled: 1
+    path: Assets/Game Jam/Testing Stuff/Scenes/Game scene.unity
+    guid: 65c675de63c46614eafec967ee6d7fd7
+  - enabled: 1
+    path: Assets/Game Jam/Testing Stuff/Scenes/You Lose.unity
+    guid: 5f06aba73aa0bed43a3dfafee8e8e14c
+  - enabled: 1
+    path: Assets/Game Jam/Testing Stuff/Scenes/You Win.unity
+    guid: bc26783337e9c7e4eb0fe353c5f7c17a
   m_configObjects: {}
