@@ -68,7 +68,13 @@ public class controller : MonoBehaviour
     }
 
     IEnumerator Wait(GameObject toDestroy) {
-        yield return new WaitForSeconds(0.1f);
+        //yield return new WaitForSeconds(0.1f);
+        while (toDestroy.transform.localScale.magnitude >= 0.3f) {
+            Vector3 scale = toDestroy.transform.localScale;
+            scale.Scale(Vector3.one * .75f);
+            toDestroy.transform.localScale = scale;
+            yield return null;
+        }
         Object.Destroy(toDestroy);
         yield return null;
     }
@@ -141,6 +147,9 @@ public class controller : MonoBehaviour
             if (canJump) {
                 body.AddRelativeForce(Vector3.up * jumpRate, ForceMode.Impulse);
             }
+        }
+        if (Input.GetKey(KeyCode.Escape)) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
         body.velocity = Vector3.ClampMagnitude(body.velocity, (isBoost)?boostMax:normalMax);
         //Debug.Log(transform.rotation.y);

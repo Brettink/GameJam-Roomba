@@ -34,9 +34,7 @@ sysinfo.txt
 *.unitypackage
 Roomba Sim/Library/
 Roomba Sim/Temp/
-<<<<<<< HEAD
+Roomba Sim/Build/
 Roomba Sim/.vs/Roomba Sim/v15/Server/sqlite3/storage.ide-wal
 Roomba Sim/.vs/Roomba Sim/v15/Server/sqlite3/storage.ide-shm
-=======
 Roomba Sim/.vs/
->>>>>>> e7a40f4c2be716459ca7739cd4e4574976361b67

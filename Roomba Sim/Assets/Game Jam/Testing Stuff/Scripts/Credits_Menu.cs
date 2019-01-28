@@ -16,7 +16,7 @@ public class Credits_Menu : MonoBehaviour {
 
 	public void GoBack () {
 		UnityEngine.SceneManagement.SceneManager.LoadScene (0);
-	
-	
-	}
+        Object.Destroy(MenuMus.self.gameObject);
+
+    }
 }

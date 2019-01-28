@@ -93,7 +93,7 @@ public class GMan : MonoBehaviour
 
     public Material outliner, outliner2;
     public static int difficulty = 1;
-    public static int numToClean = (int)(difficulty * Math.Abs(Math.Cos(difficulty) * 20) * 15);
+    public static int numToClean = (int)(difficulty * Math.Abs(Math.Cos(difficulty) * 20) * 12);
 
     public List<BoxCollider> m_lPotentialDirtyAreas;
     Bounds roomBounds;

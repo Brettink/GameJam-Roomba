@@ -640,7 +640,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: 0684c939130fe974984809d9ed738bb7, type: 3}
       propertyPath: m_Name
-      value: Charger (1)
+      value: Charger
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 0684c939130fe974984809d9ed738bb7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3221,13 +3221,28 @@ PrefabInstance:
     - target: {fileID: 2134170685559093421, guid: d041064d4dbb1a948890c14128aef440,
         type: 3}
       propertyPath: speed
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2134170685559093421, guid: d041064d4dbb1a948890c14128aef440,
         type: 3}
       propertyPath: Bump
       value: 
       objectReference: {fileID: 8300000, guid: 42a9e6369319fe84aa03be2bf2e3dfd0, type: 3}
+    - target: {fileID: 2134170685559093421, guid: d041064d4dbb1a948890c14128aef440,
+        type: 3}
+      propertyPath: normalMax
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134170685559093421, guid: d041064d4dbb1a948890c14128aef440,
+        type: 3}
+      propertyPath: boostMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134170685559093421, guid: d041064d4dbb1a948890c14128aef440,
+        type: 3}
+      propertyPath: boostSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d041064d4dbb1a948890c14128aef440, type: 3}
 --- !u!23 &1830301358 stripped
@@ -3616,6 +3631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378342210479648360, guid: ea1ff332defbdb948978fb00b27e1ec7,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea1ff332defbdb948978fb00b27e1ec7, type: 3}
